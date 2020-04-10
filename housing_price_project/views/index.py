@@ -10,7 +10,7 @@ def index():
 			area = request.form.get("area")
 			rooms = request.form.get("rooms")
 			md.Train_model("housing_price_project/static/dataset/house_prices.csv", ["Area", "Rooms", "Prices"])
-			price = md.predict(area, rooms)
+			price = md.Predict(area, rooms)
 			print(price, type(price))
 			md.Evaluate_model()
 			return render_template("index.html", price=None)
