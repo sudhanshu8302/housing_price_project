@@ -10,7 +10,6 @@ def fetch_dataset(dataset_path, columns):
 
 def split_dataset(dataset):
 	dataset.dropna(subset=["Prices"], inplace=True)
-	return dataset, dataset
 	return train_test_split(dataset, test_size=7, random_state=50)
 
 def split_label(dataset, label):
