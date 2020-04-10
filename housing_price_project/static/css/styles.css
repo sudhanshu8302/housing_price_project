@@ -1,0 +1,17 @@
+body {overflow:hidden;}
+header h1 {text-align:center; font-size: 5em;}
+#form_intro {font-size:2.5em;}
+#defi {font-size:1.8em;}
+label {font-color: red;}
+#p1 {font-size: 1.5em;}
+#p2 {font-size: 1em;}
+#p3 {font-size: 1.5em;}
+#written {text-align:center;}
+header {border-style:solid; height:350px; width:100%; background-image: url('/static/images/images.jpg'); background-repeat:no-repeat; background-size:100% 100%;}
+#main_form {margin-left:30px;float:left; height:500px; width:60%; margin-top:30px;margin-right:30px; border-style: solid;}
+footer {clear:both; border-style:solid; height:40px; width:100%; text-align:center; vertical-align:middle;}
+#right_col {float:right; width:30%; height:500px; margin-top:30px;margin-right:30px;}
+#about {border-style:solid; width:100%;padding:2px; height:content;}
+#intro {border-style:solid; width:100%; height:content; margin-top:10px; margin-bottom:10px;}
+#comment {border-style:solid; width:100%; height:32%;}
+#first_label+label {font-color:red;}

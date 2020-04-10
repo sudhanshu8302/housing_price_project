@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block content %}
+<div id="main_form">
+	<p id="form_intro">HI! NEED SOME HELP ??</p>
+	<p id="defi">Try predicting your HOME prices by filling some details here !</p>
+	<form method="POST">
+		<div id="first_label">
+			<span>ENTER THE AREA OF THE HOUSE:</span>
+			<div id="inp_1">
+				<input type="text" name="area">
+			</div>
+		</div>
+		<div>
+			<span>ENTER THE NUMBER OF ROOMS:</span>
+			<div id="inp_2">
+				<input type="text" name="rooms">
+			</div>
+		</div>
+		<div>
+			<input type="submit" name="submit">
+		</div>
+	</form>
+	{% if price %}
+		<p>The predicted price of desired house is {{ price }}</p>
+	{% endif %}
+</div>
+<div id="right_col">
+	<div id="about">
+		<h2>ABOUT US</h2>
+		<p>We are a small group of amazing people , chasing a common dream of helping people. Many people are hesitant in buying their dream homes just because they dont get the right deal , so we have decided to help all of them in getting the best deal out there. 
+		</p>
+	</div>
+	<div id="intro">
+		<h2>CONTRIBUTORS:</h2>
+		<ul>
+			<li><a href="">AMAN BHARDWAJ</a></li>
+			<li><a href="">PRABHJEET SINGH</a></li>
+			<li><a href="">SUDHANSHU</a></li>
+		</ul>
+	</div>
+	<div id="comment">
+		<span>Wanna share some thoughts:</span>
+		<br>
+		<textarea></textarea>
+		<br>
+		<button onclick="">SHARE WITH US</button>
+	</div>
+</div>
+{% endblock content %}
