@@ -14,7 +14,9 @@ if choice == '3':
 	md.Evaluate_model()
 
 if choice == '4':
-	area = input("Enter area:")
-	rooms = input("Enter number of rooms:")
-	price = md.Predict(area, rooms)
+	Propertycount = input("Enter propertycount:")
+	Rooms = input("Enter number of rooms:")
+	Type = input("Enter type:")
+	Distance = input("Enter distance:")
+	price = md.Predict(Rooms, Type, Propertycount, Distance)
 	print(f"Price = {price}")
