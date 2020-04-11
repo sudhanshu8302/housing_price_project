@@ -20,5 +20,6 @@ def return_cross_val_score():
 	lin_reg = joblib.load("housing_price_project/static/pickled_files/lin_reg.pkl")
 
 	scores = cross_val_score(lin_reg, data, data_labels, scoring="neg_mean_squared_error", cv=10)
+	scores = np.sqrt(-scores)
 	joblib.dump(scores, "housing_price_project/static/pickled_files/scores.pkl")
 	return scores

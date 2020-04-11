@@ -30,7 +30,6 @@ def Train_model(dataset_path="housing_price_project/static/dataset/melbourne_hou
 def Evaluate_model():
 	print("1. Root Mean Squared Error\n2. Cross Validation Score")
 	choice = input("Enter:")
-	print("hello")
 	if choice == '1':
 		lin_rmse = evaluate.return_rmse()
 		print(f"Root Mean Squared Error is {lin_rmse}")
