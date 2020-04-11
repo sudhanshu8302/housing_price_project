@@ -15,7 +15,10 @@ def Train_model(dataset_path="housing_price_project/static/dataset/melbourne_hou
 
 	data, data_labels = train.split_label(train_set, "Price")
 
-	data = train.clean_data(data)
+	cleaner = train.clean_data()
+	data=cleaner.fit_transform(data)
+
+	joblib.dump(cleaner,"housing_price_project/static/pickled_files/cleaner.pkl")
 
 	joblib.dump(data, "housing_price_project/static/pickled_files/clean_data_without_labels.pkl")
 	joblib.dump(data_labels, "housing_price_project/static/pickled_files/data_labels.pkl")
@@ -36,10 +39,10 @@ def Predict(Rooms, Type, Propertycount, Distance):
 	Rooms = int(Rooms)
 	Distance = int(Distance)
 	features = np.array([[Rooms, Type, Propertycount, Distance]])
-	print(type(features), features, features.shape)
+	
 	features = pd.DataFrame(features, columns=["Rooms", "Type", "Propertycount", "Distance"])
-	print(features.head(), features.info())
-	features = train.clean_data(features)
-	print(type(features), features, features.shape)
-	return 1
+	
+	cleaner=joblib.load("housing_price_project/static/pickled_files/cleaner.pkl")
+	features = cleaner.transform(features)
+
 	return lin_reg.predict(features)

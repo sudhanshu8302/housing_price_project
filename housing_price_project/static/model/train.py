@@ -21,7 +21,7 @@ def split_label(dataset, label):
 	data = dataset.drop(label, axis=1)
 	return data, dataset_labels
 
-def clean_data(dataset):
+def clean_data():
 	num_pipeline = Pipeline([
 		('imputer', SimpleImputer(strategy="median")),
 		('std_scaler', StandardScaler()),
@@ -34,7 +34,7 @@ def clean_data(dataset):
 		("cat", OneHotEncoder(), cat_attribs),
 		])
 
-	return full_pipeline.fit_transform(dataset)
+	return full_pipeline
 
 def train_model(dataset, dataset_labels):
 	lin_reg = LinearRegression()
