@@ -22,6 +22,7 @@ while True:
 		Distance = input("Enter distance:")
 		price = md.Predict(Rooms, Type, Propertycount, Distance)
 		print(f"Price = {price}")
+		input("Press any key to continue!\n")
 	if choice =='5':
 		break
 print("BYE")

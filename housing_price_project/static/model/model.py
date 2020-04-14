@@ -28,7 +28,22 @@ def Train_model(dataset_path="housing_price_project/static/dataset/melbourne_hou
 	joblib.dump(lin_reg, "housing_price_project/static/pickled_files/lin_reg.pkl")
 
 def Evaluate_model():
-	print(evaluate.return_rmse())
+	print("1. Root Mean Squared Error\n2. Cross Validation Score")
+	choice = input("Enter:")
+	if choice == '1':
+		lin_rmse = evaluate.return_rmse()
+		print(f"Root Mean Squared Error is {lin_rmse}")
+
+	elif choice == '2':
+		scores = evaluate.return_cross_val_score()
+		print(f"Scores: {scores}")
+		print(f"Mean: {scores.mean()}")
+		print(f"Standard Deviation: {scores.std()}")
+
+	else:
+		print("Invalid Input!!")
+
+	input("Press any key to continue!\n")
 
 def Visualize_dataset():
 	pass
